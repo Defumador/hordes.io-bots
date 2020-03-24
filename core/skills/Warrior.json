@@ -1,0 +1,129 @@
+{
+  "defends": {
+    "1": {
+      "key": 0,
+      "name": "Armor Reinforcement",
+      "levels": {
+        "1": { "cost": 0, "castTime": 0, "coolDown": 0 },
+        "2": { "cost": 0, "castTime": 0, "coolDown": 0 },
+        "3": { "cost": 0, "castTime": 0, "coolDown": 0 },
+        "4": { "cost": 0, "castTime": 0, "coolDown": 0 },
+        "5": { "cost": 0, "castTime": 0, "coolDown": 0 }
+      }
+    },
+    "2": {
+      "key": 0,
+      "name": "Bulwark",
+      "levels": {
+        "1": { "cost": "8", "castTime": 0, "coolDown": "30" },
+        "2": { "cost": "13", "castTime": 0, "coolDown": "30" },
+        "3": { "cost": "18", "castTime": 0, "coolDown": "30" },
+        "4": { "cost": "23", "castTime": 0, "coolDown": "30" },
+        "5": { "cost": "28", "castTime": 0, "coolDown": "30" }
+      }
+    },
+    "3": {
+      "key": 0,
+      "name": "Crusader's Courage",
+      "levels": {
+        "1": { "cost": "8", "castTime": 0, "coolDown": "150" },
+        "2": { "cost": "16", "castTime": 0, "coolDown": "150" },
+        "3": { "cost": "24", "castTime": 0, "coolDown": "150" },
+        "4": { "cost": "32", "castTime": 0, "coolDown": "150" },
+        "5": { "cost": "40", "castTime": 0, "coolDown": "150" }
+      }
+    },
+    "4": {
+      "key": 0,
+      "name": "Colossal Reconstruction",
+      "levels": {
+        "1": { "cost": "8", "castTime": 0, "coolDown": "25" },
+        "2": { "cost": "16", "castTime": 0, "coolDown": "25" },
+        "3": { "cost": "24", "castTime": 0, "coolDown": "25" },
+        "4": { "cost": "32", "castTime": 0, "coolDown": "25" },
+        "5": { "cost": "40", "castTime": 0, "coolDown": "25" }
+      }
+    }
+  },
+  "attacks": {
+    "1": {
+      "key": 0,
+      "name": "Slash",
+      "levels": {
+        "1": { "cost": "2", "castTime": 0, "coolDown": "1" },
+        "2": { "cost": "3", "castTime": 0, "coolDown": "1" },
+        "3": { "cost": "4", "castTime": 0, "coolDown": "1" },
+        "4": { "cost": "5", "castTime": 0, "coolDown": "1" },
+        "5": { "cost": "6", "castTime": 0, "coolDown": "1" }
+      }
+    },
+    "2": {
+      "key": 0,
+      "name": "Crescent Swipe",
+      "levels": {
+        "1": { "cost": "4", "castTime": 0, "coolDown": "6" },
+        "2": { "cost": "6", "castTime": 0, "coolDown": "6" },
+        "3": { "cost": "8", "castTime": 0, "coolDown": "6" },
+        "4": { "cost": "10", "castTime": 0, "coolDown": "6" },
+        "5": { "cost": "12", "castTime": 0, "coolDown": "6" }
+      }
+    },
+    "3": {
+      "key": 0,
+      "name": "Centrifugal Laceration",
+      "levels": {
+        "1": { "cost": 0, "castTime": 0, "coolDown": 0 },
+        "2": { "cost": 0, "castTime": 0, "coolDown": 0 },
+        "3": { "cost": 0, "castTime": 0, "coolDown": 0 },
+        "4": { "cost": 0, "castTime": 0, "coolDown": 0 },
+        "5": { "cost": 0, "castTime": 0, "coolDown": 0 }
+      }
+    },
+    "4": {
+      "key": 0,
+      "name": "Unholy Warcry",
+      "levels": {
+        "1": { "cost": "8", "castTime": 0, "coolDown": "150" },
+        "2": { "cost": "16", "castTime": 0, "coolDown": "150" },
+        "3": { "cost": "24", "castTime": 0, "coolDown": "150" },
+        "4": { "cost": "32", "castTime": 0, "coolDown": "150" },
+        "5": { "cost": "40", "castTime": 0, "coolDown": "150" }
+      }
+    }
+  },
+  "others": {
+    "1": {
+      "key": 0,
+      "name": "Taunt",
+      "levels": {
+        "1": { "cost": "4", "castTime": 0, "coolDown": "15" },
+        "2": { "cost": "8", "castTime": 0, "coolDown": "15" },
+        "3": { "cost": "12", "castTime": 0, "coolDown": "15" },
+        "4": { "cost": "16", "castTime": 0, "coolDown": "15" },
+        "5": { "cost": "20", "castTime": 0, "coolDown": "15" }
+      }
+    },
+    "2": {
+      "key": 0,
+      "name": "Charge",
+      "levels": {
+        "1": { "cost": "12", "castTime": 0, "coolDown": "15" },
+        "2": { "cost": "12", "castTime": 0, "coolDown": "15" },
+        "3": { "cost": "12", "castTime": 0, "coolDown": "15" },
+        "4": { "cost": "12", "castTime": 0, "coolDown": "15" },
+        "5": { "cost": "12", "castTime": 0, "coolDown": "15" }
+      }
+    },
+    "3": {
+      "key": 0,
+      "name": "Tempering",
+      "levels": {
+        "1": { "cost": "8", "castTime": 0, "coolDown": "30" },
+        "2": { "cost": "13", "castTime": 0, "coolDown": "30" },
+        "3": { "cost": "18", "castTime": 0, "coolDown": "30" },
+        "4": { "cost": "23", "castTime": 0, "coolDown": "30" },
+        "5": { "cost": "28", "castTime": 0, "coolDown": "30" }
+      }
+    }
+  }
+}
