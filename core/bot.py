@@ -1,19 +1,44 @@
 import time
+from core import secret
 from abc import ABC, abstractmethod
 from core.setup_logger import logger
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
 
 URL = 'https://hordes.io'
-DELAY = 0.1             # bot's lifespan
+DELAY = 0.1  # bot's lifespan
 LOW_MANA_LIMIT = 30
+
+
+def login(driver):
+    if secret.account == 'account':
+        account = input("what is your account? ")
+        password = input("what is your password? ")
+    else:
+        account = secret.account
+        password = secret.password
+    driver.find_element_by_xpath('//*[@id="hero"]/div[3]/div[2]/div').click()  # click 'play' button
+    driver.find_element_by_xpath('//*[@id="hero"]/div[3]/div/div/a').click()  # click 'log in with google'
+    WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH, '//*[@id="identifierId"]')))  # wait for page to load
+    driver.find_element_by_xpath('//*[@id="identifierId"]').send_keys(account)  # enter account
+    driver.find_element_by_xpath('//*[@id="identifierNext"]/span/span').click()  # click 'next' button
+    time.sleep(5)  # wait for page to load (same page, different section)
+    driver.find_element_by_xpath('//*[@id="password"]/div[1]/div/div[1]/input').send_keys(password)  # enter password
+    driver.find_element_by_xpath('//*[@id="passwordNext"]/span/span').click()  # click 'login' button
+    WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH, '//*[@id="hero"]/div[3]/div/div/div/div[2]/div[1]')))  # wait for page to load
+    driver.find_element_by_xpath('//*[@id="hero"]/div[3]/div/div/div/div[2]/div[1]').click()  # select first player
+    driver.find_element_by_xpath('//*[@id="hero"]/div[3]/div/div/div/div[3]').click()  # click 'enter game'
 
 
 class Bot(ABC):  # Root class
     def __init__(self, driver_obj):
         self.webdriver = driver_obj
         self.driver = self.webdriver.driver
-        self.driver.execute_script("alert('Please press Enter in the terminal when logged in and on the play screen');")
-        input("[+] Press ENTER when you're login in and on the play screen (make sure to place me at the grinding spot)... ")
+        # self.driver.execute_script("alert('Please press Enter in the terminal when logged in and on the play screen');")
+        # input("[+] Press ENTER when you're login in and on the play screen (make sure to place me at th eginrding spot)... ")
+        login(self.driver)
         # Get necessary components
         logger.info('Getting components...')
         self.components = self.get_components()
@@ -25,7 +50,7 @@ class Bot(ABC):  # Root class
         """
         logger.info('Bot is running...')
         enemy_is_alive = False
-        enemy_previous_health = -1                 # to check if the enemy actually get damaged
+        enemy_previous_health = -1  # to check if the enemy actually get damaged
 
         while True:
             try:
@@ -45,9 +70,10 @@ class Bot(ABC):  # Root class
                             logger.info("Player's health is low. Defending...")
                             self.defend()
                             # if 'die' then respawn
-                        elif player_health_status is 'die':
+                        elif player_health_status == 'die':
                             logger.info("Player's died. Respawning...")
-                            self.driver.execute_script("alert('Player died. Please press Enter in the terminal to continue...');")
+                            self.driver.execute_script(
+                                "alert('Player died. Please press Enter in the terminal to continue...');")
                             input("Player died. Please press Enter to respawn")
                             self.respawn()
                             input("Please lead me to the griding location and press ENTER...")
@@ -58,7 +84,7 @@ class Bot(ABC):  # Root class
                             logger.debug("Player's health is normal...")
 
                         # check for player's mana status
-                        if player_mana_status is 'low':
+                        if player_mana_status == 'low':
                             # if 'low' then rest
                             logger.info(f"Player's mana is low. Resting...")
                             self.rest()
@@ -69,7 +95,7 @@ class Bot(ABC):  # Root class
                         # check for enemy's health status
                         logger.debug("Checking enemy's health...")
                         enemy_health_status = self.check_enemy_health()
-                        if enemy_health_status is 'die':
+                        if enemy_health_status == 'die':
                             # if 'die' then find another enemy
                             logger.debug("Enemy died...")
                             enemy_is_alive = False
@@ -78,7 +104,7 @@ class Bot(ABC):  # Root class
                             # if 'alive' then continue
                         else:
                             logger.debug("Enemy is still alive...")
-                            if enemy_previous_health == enemy_health_status:                # Checking if the attack could damage the target
+                            if enemy_previous_health == enemy_health_status:  # Checking if the attack could damage the target
                                 logger.info("Player could not damage the enemy. Find another one...")
                                 enemy_is_alive = False
                                 enemy_previous_health = -1
@@ -101,7 +127,8 @@ class Bot(ABC):  # Root class
                     self.components = self.get_components()
                 else:
                     logger.warning('Lost control of the bot...')
-                    raise Exception('Could not find neccessary components for bot...')          # TODO: change to specific exception to raise.
+                    raise Exception(
+                        'Could not find neccessary components for bot...')  # TODO: change to specific exception to raise.
 
             except Exception as e:
                 logger.exception(e)

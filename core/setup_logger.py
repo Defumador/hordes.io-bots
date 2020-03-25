@@ -15,9 +15,9 @@ def logger_init(debug: bool = False):
     """
     global logger
     if debug:
-        level = logging.DEBUG
+        level = logging.DEBUG  # 10 basic
     else:
-        level = logging.INFO
+        level = logging.INFO  # 20
     logging.basicConfig(level=level, format='[%(levelname)s] %(message)s')
     logger = logging.getLogger('hordes.io')
     # File handler

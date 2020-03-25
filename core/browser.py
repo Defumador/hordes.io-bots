@@ -6,12 +6,10 @@ from selenium.common import exceptions
 
 URL = 'https://hordes.io'
 
+
 class Driver:
 
-    def __init__(self, type: str,
-                       chromedriver_path: str
-                 # total: int        # total web browser to open
-                 ):
+    def __init__(self, type: str, chromedriver_path: str):  # total: int        # total web browser to open
         self.path = chromedriver_path
         if not type:
             logger.warning('No web browser specify')
@@ -24,7 +22,11 @@ class Driver:
             self.chrome_options = Options()
             self.chrome_options.add_argument('--start-maximized')
         # elif type.lower() == "firefox":
+        #     from selenium.webdriver.chrome.options import Options
         #     self.driver = webdriver.Firefox
+        #     # Initialize options:
+        #     self.chrome_options = Options()
+        #     self.chrome_options.add_argument('--start-maximized')
         #     # TODO: add options for firefox
         else:
             logger.error(f"{type} is not supported")
@@ -38,7 +40,7 @@ class Driver:
             if self.path:
                 self.driver = self.driver(self.path, chrome_options=self.chrome_options)
             else:
-                self.driver = self.driver(chrome_options=self.chrome_options)               # TODO: clean this mess
+                self.driver = self.driver(chrome_options=self.chrome_options)  # TODO: clean this mess
 
         except exceptions.WebDriverException:
             logger.error('Could not initiate web driver...')
@@ -46,7 +48,7 @@ class Driver:
 
         # Load cookies if exist
         if isfile("hordes_cookies.pkl"):
-            self.driver.get('https://www.google.com/')              # redirect to this website before add cookies so that if we direct back to hordes.io then we will logged in.
+            self.driver.get('https://www.google.com/')  # redirect to this website before add cookies so that if we direct back to hordes.io then we will logged in.
             logger.info("Adding cookies to browser...")
             for cookie in pickle.load(open("hordes_cookies.pkl", "rb")):
                 self.driver.add_cookie(cookie)
