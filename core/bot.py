@@ -15,8 +15,8 @@ LOW_MANA_LIMIT = 30
 def login(driver):
     if secret.account == 'account':
         print("You have two choices:"
-              "1) edit your account and password in password.py and rerun main.py"
-              "2) enter your password here")
+              "\n1) edit your account and password in password.py and rerun main.py"
+              "\n2) enter your password here")
         account = input("what is your account? ")
         password = input("what is your password? ")
     else:
