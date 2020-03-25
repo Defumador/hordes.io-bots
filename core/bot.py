@@ -14,6 +14,9 @@ LOW_MANA_LIMIT = 30
 
 def login(driver):
     if secret.account == 'account':
+        print("You have two choices:"
+              "1) edit your account and password in password.py and rerun main.py"
+              "2) enter your password here")
         account = input("what is your account? ")
         password = input("what is your password? ")
     else:
@@ -30,6 +33,7 @@ def login(driver):
     WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH, '//*[@id="hero"]/div[3]/div/div/div/div[2]/div[1]')))  # wait for page to load
     driver.find_element_by_xpath('//*[@id="hero"]/div[3]/div/div/div/div[2]/div[1]').click()  # select first player
     driver.find_element_by_xpath('//*[@id="hero"]/div[3]/div/div/div/div[3]').click()  # click 'enter game'
+    time.sleep(20)
 
 
 class Bot(ABC):  # Root class
@@ -234,17 +238,13 @@ class Bot(ABC):  # Root class
         try:
             components = {
                 'player': {
-                    'current_health': self.driver.find_element_by_xpath('//*[@id="ui_player"]/div/'
-                                                                        'div[1]/div[2]/span[1]').text,
-                    'max_health': self.driver.find_element_by_xpath('//*[@id="ui_player"]/div/'
-                                                                    'div[1]/div[2]/span[2]').text,
-                    'current_mana': self.driver.find_element_by_xpath('//*[@id="ui_player"]/div/'
-                                                                      'div[2]/div[2]/span[1]').text,
+                    'current_health': self.driver.find_element_by_xpath('//*[@id="ui_player"]/div/div[1]/div[2]/span[1]').text,
+                    'max_health': self.driver.find_element_by_xpath('//*[@id="ui_player"]/div/div[1]/div[2]/span[2]').text,
+                    'current_mana': self.driver.find_element_by_xpath('//*[@id="ui_player"]/div/div[2]/div[2]/span[1]').text,
                 },
                 'target': {
                     'is_alive': self.driver.find_element_by_xpath('//*[@id="ui_target"]').is_displayed(),
-                    'current_health': self.driver.find_element_by_xpath('//*[@id="ui_target"]/div/'
-                                                                        'div[1]/div[2]/span[1]').text,
+                    'current_health': self.driver.find_element_by_xpath('//*[@id="ui_target"]/div/div[1]/div[2]/span[1]').text,
                 }
             }
         except AttributeError:
