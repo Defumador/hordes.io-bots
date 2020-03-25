@@ -1,2 +1,0 @@
-account = 'account'
-password = 'password'
