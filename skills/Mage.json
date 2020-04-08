@@ -1,0 +1,90 @@
+{
+  "Ice Bolt": {
+    "key": 0,
+    "levels": {
+      "1": { "cost": 4, "castTime": 1.5, "coolDown": 1 },
+      "2": { "cost": 7, "castTime": 1.5, "coolDown": 1 },
+      "3": { "cost": 10, "castTime": 1.5, "coolDown": 1 },
+      "4": { "cost": 13, "castTime": 1.5, "coolDown": 1 },
+      "5": { "cost": 16, "castTime": 1.5, "coolDown": 1 }
+    },
+    "elapsed_time": 0
+  },
+  "Chilling Radiance": {
+    "key": 0,
+    "levels": {
+      "1": { "cost": 4, "castTime": 0, "coolDown": 20 },
+      "2": { "cost": 8, "castTime": 0, "coolDown": 20 },
+      "3": { "cost": 12, "castTime": 0, "coolDown": 20 },
+      "4": { "cost": 16, "castTime": 0, "coolDown": 20 },
+      "5": { "cost": 20, "castTime": 0, "coolDown": 20 }
+    },
+    "elapsed_time": 0
+  },
+  "Icicle Orb": {
+    "key": 0,
+    "levels": {
+      "1": { "cost": 10, "castTime": 1.5, "coolDown": 15 },
+      "2": { "cost": 18, "castTime": 1.5, "coolDown": 15 },
+      "3": { "cost": 26, "castTime": 1.5, "coolDown": 15 },
+      "4": { "cost": 34, "castTime": 1.5, "coolDown": 15 },
+      "5": { "cost": 42, "castTime": 1.5, "coolDown": 15 }
+    },
+    "elapsed_time": 0
+  },
+  "Hypothermic Frenzy": {
+    "key": 0,
+    "levels": {
+      "1": { "cost": 0, "castTime": 0, "coolDown": 45 },
+      "2": { "cost": 0, "castTime": 0, "coolDown": 45 },
+      "3": { "cost": 0, "castTime": 0, "coolDown": 45 },
+      "4": { "cost": 0, "castTime": 0, "coolDown": 45 },
+      "5": { "cost": 0, "castTime": 0, "coolDown": 45 }
+    },
+    "elapsed_time": 0
+  },
+  "Arctic Aura": {
+    "key": 0,
+    "levels": {
+      "1": { "cost": 15, "castTime": 0, "coolDown": 120 },
+      "2": { "cost": 25, "castTime": 0, "coolDown": 120 },
+      "3": { "cost": 35, "castTime": 0, "coolDown": 120 },
+      "4": { "cost": 45, "castTime": 0, "coolDown": 120 },
+      "5": { "cost": 55, "castTime": 0, "coolDown": 120 }
+    },
+    "elapsed_time": 0
+  },
+  "Teleport": {
+    "key": 0,
+    "levels": {
+      "1": { "cost": 4, "castTime": 0, "coolDown": 12 },
+      "2": { "cost": 8, "castTime": 0, "coolDown": 12 },
+      "3": { "cost": 12, "castTime": 0, "coolDown": 12 },
+      "4": { "cost": 16, "castTime": 0, "coolDown": 12 },
+      "5": { "cost": 20, "castTime": 0, "coolDown": 12 }
+    },
+    "elapsed_time": 0
+  },
+  "Ice Shield": {
+    "key": 0,
+    "levels": {
+      "1": { "cost": 5, "castTime": 0, "coolDown": 60 },
+      "2": { "cost": 10, "castTime": 0, "coolDown": 60 },
+      "3": { "cost": 15, "castTime": 0, "coolDown": 60 },
+      "4": { "cost": 20, "castTime": 0, "coolDown": 60 },
+      "5": { "cost": 25, "castTime": 0, "coolDown": 60 }
+    },
+    "elapsed_time": 0
+  },
+  "Enchantment": {
+    "key": 0,
+    "levels": {
+      "1": { "cost": 5, "castTime": 1.2, "coolDown": 0 },
+      "2": { "cost": 8, "castTime": 1.2, "coolDown": 0 },
+      "3": { "cost": 11, "castTime": 1.2, "coolDown": 0 },
+      "4": { "cost": 14, "castTime": 1.2, "coolDown": 0 },
+      "5": { "cost": 17, "castTime": 1.2, "coolDown": 0 }
+    },
+    "elapsed_time": 0
+  }
+}
